@@ -1,6 +1,6 @@
 # MGTrans
-is a easy to use, safe to enbed codes that transfer Matrix or Graph between different formats. Such as MatrixMarket, METIS, ...
-for Matrix file format transformation, please go to ./Matrix*/
+easy to use, safe to embed codes that transfer Matrix or Graph between different formats (such as MatrixMarket, METIS, ...) for c/c++, python and matlab language users.  
+for Matrix file format transformation, please go to ./Matrix*/  
 for Graph file format transformation, please go to ./Graph*/
 
 
