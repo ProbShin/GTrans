@@ -5,6 +5,8 @@
 #### Created Time: Wed 12 Oct 2016 09:38:41 PM EDT
 
 import sys,getopt
+import os
+
 
 README="""
 #### README ####
@@ -13,7 +15,7 @@ mm    - matrix market
 metis - metis
 [TODO] other formats
 
-more details please send visit us at www.github.com
+more details please visit us at https://github.com/ProbShin/MGTrans
 
 #### USAGE ####
 There are two ways:
@@ -28,7 +30,7 @@ $python3 %s -i foo.mtx -s mm -o bar.graph -t metis
 #### Help ####
 $python3 %s --help
 $python3 %s -h
-"""%(sys.argv[0],sys.argv[0],sys.argv[0],sys.argv[0],sys.argv[0],sys.argv[0] )
+"""%(sys.argv[0],sys.argv[0],sys.argv[0],sys.argv[0],sys.argv[0],sys.argv[0],sys.argv[0] )
 
 class G_AdjacentVertex:
     def __init__(self):
@@ -184,6 +186,17 @@ def mm_read(gname):
     print(G.L)
     mm_write(G, "debug"+gname)
     return G
+
+def guess_type_from_name(igname,ogname):
+    itype, otype = None, None
+    DICS={".mtx":mm, ".graph":metis,".mat":matlab}
+    ipn, iext= os.path.splitext(igname);
+    opn, oext= os.path.splitext(ogname);
+    if iext in DICS:
+        itype = DICS[iext]
+    if oext  in DICS:
+        otype = DICS[oext]
+    return 
 
 def usage():
     print(README)
