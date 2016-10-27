@@ -66,7 +66,7 @@ def metis_write(G,gname):
     return
 
 def metis_read(gname):
-    G = G_edgelist();
+    #G = G_edgelist();
     n,m = 0,0
     NCON, MCON = 0, 0
     with open(gname,"r") as f:
@@ -203,7 +203,7 @@ def usage():
 
 def main():
     try:
-        opts,args = getopt.getopt(sys.argv[1:],"hi:o:v",["help","input=","output=","itype=","otype="])
+        opts,args = getopt.getopt(sys.argv[1:],"hi:o:v",["help","input=","output=","intype=","outtype="])
     except getopt.GetoptError as err:
         print(str(err))
         usage()
@@ -226,9 +226,9 @@ def main():
                 igname = a
             elif o in ["-o","--output"]:
                 ogname = a
-            elif o in ["--itype"]:
+            elif o in ["--intype"]:
                 igtype = a
-            elif o in ["--otype"]:
+            elif o in ["--outtype"]:
                 ogtype = a
             else:
                 print("could not handle option")
