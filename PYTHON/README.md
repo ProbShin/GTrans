@@ -1,3 +1,10 @@
+#file list:
+* GTrans.py
+* lcc.py
+
+--------
+
+#File 1: GTrans.py
 Welcome! this is a python program to transfer graph format between 
 * mm ------ matrix market
 * metis --- metis
@@ -25,3 +32,12 @@ $python3 GTrans.py -i foo.mtx -s mm -o bar.graph -t metis
 $python3 GTrans.py --help
 $python3 GTrans.py -h
 </pre>
+
+
+---------
+#File 2: lcc.py
+
+This function would find the largest connected component.  
+And output it into matrix market format.  
+
+For simplicity, all output will be consider as directed graph. :)
