@@ -66,6 +66,7 @@ def metis_write(G,gname):
     return
 
 def metis_read(gname):
+    G = G_AdjacentVertex()
     #G = G_edgelist();
     n,m = 0,0
     NCON, MCON = 0, 0
@@ -181,11 +182,17 @@ def mm_read(gname):
                 G.L[i-1].append(j);
                 G.L[j-1].append(i);
                 G.m+=1
-    print(G.bDirect,end=" ")
-    print(G.m,end="m ")
-    print(G.L)
-    mm_write(G, "debug"+gname)
+    #print(G.bDirect,end=" ")
+    #print(G.m,end="m ")
+    #print(G.L)
+    #mm_write(G, "debug"+gname)
     return G
+
+
+def trans_metis_mm(igname, ogname):
+    G=metis_read(igname)
+    mm_write(G,ogname)
+    return
 
 def guess_type_from_name(igname,ogname):
     itype, otype = None, None
